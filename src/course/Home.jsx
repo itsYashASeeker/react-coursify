@@ -4,6 +4,8 @@ import { fetchCourses, getAllCourses, selectCourses } from "../features/course/c
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-regular-svg-icons";
 
 export default function Home() {
 
@@ -13,20 +15,29 @@ export default function Home() {
 
     const [sscourses, setSSCourses] = useState(courses);
     const [courseN, setCourseN] = useState(true);
+    const [likes, setLikes] = useState([0, 0, 0, 0]);
 
     const timer = ms => new Promise((r) => setTimeout(r, ms));
 
     useEffect(() => {
-        // axios.get("http://localhost:3000/getcourses/foryash", {
-        //     headers: { 'Content-Type': "application/json", },
-        // })
-        //     .then((data) => {
-        //         // state.value = data.data;
-        //         console.log(data.data);
-        //     })
-        //     .catch((err) => {
+        async function f2() {
+            await axios.get("https://todolists-pora.onrender.com/getcourses/likes", {
+                headers: { 'Content-Type': "application/json", },
+            })
+                .then((data) => {
+                    // state.value = data.data;
+                    const dumD = data.data;
+                    var dumL = likes;
+                    for (var i = 0; i < dumD.length; i++) {
+                        dumL[dumD[i].fId - 1] = dumD[i].likes;
+                    }
+                    setLikes([...dumL]);
+                })
+                .catch((err) => {
 
-        //     })
+                })
+        }
+        f2();
         // if (courses.length == 0) {
         async function ff() {
             await timer(200);
@@ -39,9 +50,36 @@ export default function Home() {
         // }
     }, []);
 
+    function addLike(i) {
+        var i = Number(i);
+        const fId = i + 1;
+        const ll = likes[i] + 1;
+
+        axios.post(`https://todolists-pora.onrender.com/getcourses/addLike/${fId}/${ll}`, {}, {
+            headers: { 'Content-Type': "application/json", },
+        })
+            .then((data) => {
+                // state.value = data.data;
+                const dumD = data.data;
+                var dumL = likes;
+                for (var i = 0; i < dumD.length; i++) {
+                    dumL[dumD[i].fId - 1] = dumD[i].likes;
+                }
+                console.log(dumD);
+                setLikes([...dumL]);
+            })
+            .catch((err) => {
+
+            })
+    }
+
     useEffect(() => {
         setSSCourses(courses);
     }, [courses]);
+
+    useEffect(() => {
+
+    }, [likes]);
 
     function handleSearch(val) {
         var dumC = [];
@@ -63,12 +101,15 @@ export default function Home() {
                 <div className="divf">
                     <input className="searchCourse" placeholder="Search..." onChange={(e) => { handleSearch(e.target.value) }} />
                 </div>
-
-                {sscourses && sscourses.length ?
+                {sscourses && likes && sscourses.length ?
                     <div className="divf allCourses">
-                        {sscourses.map((el) => {
+                        {sscourses.map((el, i) => {
                             return (
                                 <button onClick={() => { navigate("/courses/" + el.id) }} className="divf fdirc courseCard">
+                                    <button className="divf likesDiv" onClick={(e) => { e.stopPropagation(); e.preventDefault(); addLike(i) }}>
+                                        <span><FontAwesomeIcon icon={faHeart} /></span>
+                                        <p> {likes[i]}</p>
+                                    </button>
                                     <div className="divf fdirc upperMainCard">
                                         <p className="divf courseName">{el.name}</p>
                                         <p className="courseTeacher">{el.instructor}</p>

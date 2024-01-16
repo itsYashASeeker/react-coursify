@@ -61,6 +61,7 @@ button {
 }
 
 .courseCard {
+  position: relative;
   width: 22vw;
   height: 15rem;
   background: white;
@@ -335,7 +336,19 @@ button {
   
 }
 
+.likesDiv{
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  gap: 0.3rem;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
 
+.likesDiv:hover{
+  background: rgb(248, 211, 211);
+}
 
 
 
