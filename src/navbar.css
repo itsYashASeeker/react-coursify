@@ -1,0 +1,32 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #48a9a671;
+    z-index: 100;
+    justify-content: space-between;
+    border-bottom: 0.15rem solid rgb(228, 228, 228);
+    padding: 0.5rem 1.5rem;
+    backdrop-filter: blur(1rem);
+}
+
+.nav1 {
+
+    font-weight: bold;
+
+    /* width: 100%; */
+}
+
+.logo {
+    font-size: 1.2rem;
+    color: black;
+}
+
+.userB {
+    cursor: pointer;
+    padding: 0.35rem 0.5rem;
+    font-size: 1rem;
+    background: white;
+    border-radius: 50%;
+}

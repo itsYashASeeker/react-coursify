@@ -1,0 +1,454 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&family=Roboto&family=Texturina:opsz@12..72&family=Tourney&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  -webkit-user-select: none;
+  /* Safari */
+  -ms-user-select: none;
+  /* IE 10 and IE 11 */
+  user-select: none;
+  /* Standard syntax */
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+
+}
+
+body {}
+
+.divf {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fdirc {
+  flex-direction: column;
+}
+
+.fbg {
+  padding-top: 3.5rem;
+}
+
+button {
+  border: none;
+  outline: none;
+  background: none;
+}
+
+.dNone {
+  display: none;
+}
+
+.alStart {
+  align-items: start;
+}
+
+.allCourses {
+  position: relative;
+  flex-wrap: wrap;
+  gap: 1rem;
+  /* justify-content: start;
+  align-items: start; */
+  padding: 1rem;
+  width: 100%;
+  height: 100%;
+}
+
+.courseCard {
+  width: 22vw;
+  height: 15rem;
+  background: white;
+  border-radius: 0.8rem;
+  justify-content: space-between;
+  overflow: hidden;
+  border: 0.3rem solid #48a9a68f;
+  cursor: pointer;
+  transition: 0.2s all ease-out;
+}
+
+.courseCard:hover {
+  transform: translateY(-5%);
+  box-shadow: 0rem 0.35rem 0rem 0rem rgb(88, 83, 83);
+}
+
+.upperMainCard {
+  /* gap: 3rem; */
+  height: 100%;
+  padding: 0.5rem 1rem;
+}
+
+.courseName {
+  font-size: 1.7rem;
+  font-weight: bold;
+  text-align: center;
+  height: 100%;
+}
+
+.courseTeacher {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.courseDesc {
+  height: fit-content;
+  text-align: justify;
+  text-justify: inter-word;
+  background: #48a9a68f;
+  width: 100%;
+  padding: 0.4rem 0.7rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 1rem;
+
+  /* max-height: 5rem; */
+}
+
+
+.goBackButton {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 1000;
+  background: white;
+  padding: 0.4rem 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+
+
+/* Course Details */
+
+.courseDetails {
+  position: relative;
+  width: calc(100% - 2rem);
+  border: 0.2rem solid #48a9a68f;
+  border-radius: 1rem;
+  overflow: hidden;
+  font-size: 1.1rem;
+  gap: 0.5rem;
+  height: calc(100vh - 4.5rem);
+  justify-content: start;
+  /* text-align: left; */
+}
+
+.courseDetailsName {
+  text-decoration: underline;
+  font-size: 2rem;
+  font-weight: 600;
+  color: rgb(0, 78, 129);
+}
+
+.undText {
+  text-decoration: underline;
+}
+
+.upperDetailsMainCard {
+
+  width: 100%;
+  background: #48a9a66c;
+  padding: 0.5rem 1rem;
+  padding-left: 3rem;
+}
+
+.midDetailsMainCard {
+  padding: 0.5rem 1rem;
+  overflow: auto;
+  width: 100%;
+  gap: 1rem;
+  justify-content: start;
+}
+
+.courseInstDetails {
+  width: 100%;
+  text-align: right;
+  color: rgb(0, 78, 129);
+  font-weight: 600;
+}
+
+.rr1 {
+  justify-content: space-between;
+  width: 100%;
+}
+
+.rr1 summary {
+  background: #48a9a634;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: 0.2s all ease-out;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.rr1 summary:hover {
+  background: #48a9a656;
+}
+
+
+.allSyllabus {
+  /* background: wheat; */
+  align-items: start;
+  padding: 0.5rem 1rem;
+  padding-right: 0;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.syllabusCard {
+  padding: 0.4rem 0.7rem;
+  background: red;
+  border-radius: 0.7rem;
+  background: rgb(236, 236, 236);
+  width: 100%;
+}
+
+.weekNum {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.weekTopic {
+  font-size: 1.15rem;
+  color: #019691;
+}
+
+/* User */
+
+.userCourseMainC {
+  margin-bottom: 1rem;
+}
+
+.coursesEnT {
+  text-align: left;
+  font-size: 1.4rem;
+  font-weight: bold;
+  width: 100%;
+}
+
+.allEnrolledCourse {
+  padding: 0.5rem 0;
+  gap: 1.5rem;
+}
+
+.courseEnrolledCard {
+  width: 100%;
+
+  border-radius: 1rem;
+  background: rgb(236, 236, 236);
+  justify-content: start;
+  overflow: hidden;
+  box-shadow: 0 0 0rem 0.13rem rgb(199, 199, 199);
+  transition: 0.2s all ease-out;
+  /* gap: 1rem; */
+}
+
+.courseEnrolledCard:hover {
+  box-shadow: 0 0 0rem 0.13rem rgb(121, 121, 121);
+}
+
+.userCourseEName {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.innerCECard {
+  padding: 1rem 1rem;
+  align-items: start;
+  height: 100%;
+  gap: 0.2rem;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.courseThumb {
+  /* height: 10rem; */
+  width: 100%;
+  height: 10rem;
+  object-fit: cover;
+  /* contain: content; */
+}
+
+.progressBar {
+  position: relative;
+  width: 5rem;
+  height: 0.4rem;
+  border: 0.1rem solid black;
+  margin-left: 0.5rem;
+  border-radius: 0.2rem;
+  overflow: hidden;
+}
+
+.progressBar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -20%;
+  width: 100%;
+  height: 100%;
+  background: green;
+}
+
+.UserCDueProgress {
+  font-weight: 600;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.userCourseDueDate {}
+
+.userCourseMarkCom {
+  padding: 0.4rem;
+  font-size: 0.9rem;
+  background: rgb(194, 194, 194);
+  font-weight: bold;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: 0.2s all ease-out;
+}
+
+.userCourseMarkCom:hover {
+  opacity: 0.8;
+}
+
+.userCourseCompleted {
+  font-weight: 600;
+  color: green;
+}
+
+
+
+
+
+
+.lds-spinner {
+  /* color: official; */
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-spinner div {
+  transform-origin: 40px 40px;
+  animation: lds-spinner 1.2s linear infinite;
+}
+
+.lds-spinner div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 37px;
+  width: 6px;
+  height: 18px;
+  border-radius: 20%;
+  background: #000000;
+}
+
+.lds-spinner div:nth-child(1) {
+  transform: rotate(0deg);
+  animation-delay: -1.1s;
+}
+
+.lds-spinner div:nth-child(2) {
+  transform: rotate(30deg);
+  animation-delay: -1s;
+}
+
+.lds-spinner div:nth-child(3) {
+  transform: rotate(60deg);
+  animation-delay: -0.9s;
+}
+
+.lds-spinner div:nth-child(4) {
+  transform: rotate(90deg);
+  animation-delay: -0.8s;
+}
+
+.lds-spinner div:nth-child(5) {
+  transform: rotate(120deg);
+  animation-delay: -0.7s;
+}
+
+.lds-spinner div:nth-child(6) {
+  transform: rotate(150deg);
+  animation-delay: -0.6s;
+}
+
+.lds-spinner div:nth-child(7) {
+  transform: rotate(180deg);
+  animation-delay: -0.5s;
+}
+
+.lds-spinner div:nth-child(8) {
+  transform: rotate(210deg);
+  animation-delay: -0.4s;
+}
+
+.lds-spinner div:nth-child(9) {
+  transform: rotate(240deg);
+  animation-delay: -0.3s;
+}
+
+.lds-spinner div:nth-child(10) {
+  transform: rotate(270deg);
+  animation-delay: -0.2s;
+}
+
+.lds-spinner div:nth-child(11) {
+  transform: rotate(300deg);
+  animation-delay: -0.1s;
+}
+
+.lds-spinner div:nth-child(12) {
+  transform: rotate(330deg);
+  animation-delay: 0s;
+}
+
+@keyframes lds-spinner {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+
+@media (max-width:1000px) {
+  .rr1 {
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 0.5rem;
+  }
+
+  .courseCard {
+    width: 43vw;
+  }
+}
+
+@media (max-width:450px) {
+  .courseDetailsName {
+    font-size: 1.4rem;
+  }
+
+  .courseCard {
+    width: 90vw;
+  }
+
+  .UserCDueProgress {
+    align-items: start;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
